@@ -4,6 +4,7 @@ const BoxForm = (props) => {
     const [color, setColor] = useState("");
     const [hasBeenSubmitted, setHasBeenSubmitted] = useState(false);
     const listColors = props.colors;
+    console.log(listColors);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -37,8 +38,14 @@ const BoxForm = (props) => {
                 <div style={boxStyle}></div>
                 <div>
                     {listColors.map((item, i) =>
-                        <li key={i}>{item}</li>
-                        // <div key={i} style={boxStyle}></div>
+                        // <li key={i}>{item}</li>
+                        <div key={i} style={{
+                            margin: '10px',
+                            background: item,
+                            width: '150px',
+                            height: '150px',
+                            border: 'none'
+                        }}>{item}</div>
 
                         )}
                 </div>
