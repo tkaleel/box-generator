@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 const BoxForm = (props) => {
     const [color, setColor] = useState("");
@@ -6,16 +6,19 @@ const BoxForm = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const newBoxColor = {color};
+        const newBoxColor = { color };
         console.log("Your chosen color: ", newBoxColor.color);
-        props.onNewColor( color );
+        props.onNewColor(color);
         setColor("");
-        setHasBeenSubmitted(true);
         
+        console.log(props.colors)
+        setHasBeenSubmitted(true);
+
     }
 
     const handleColor = (e) => {
         setColor(e.target.value);
+        
     }
 
     const boxStyle = {
@@ -26,12 +29,12 @@ const BoxForm = (props) => {
         border: 'none'
     };
 
-    const boxGenerator = () =>{
-        if (hasBeenSubmitted){
+    const boxGenerator = () => {
+        if (hasBeenSubmitted) {
             return (
                 <div style={boxStyle}></div>
             )
-        }else {
+        } else {
             return "Please select a color.";
         }
     };
@@ -49,9 +52,9 @@ const BoxForm = (props) => {
             <h2>Boxes</h2>
             <p>{color}</p>
             <div>
-                { boxGenerator()}
+                {boxGenerator()}
             </div>
-            
+
 
         </div>
     )
