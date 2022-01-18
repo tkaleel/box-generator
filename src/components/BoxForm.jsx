@@ -35,8 +35,6 @@ const BoxForm = (props) => {
         if (hasBeenSubmitted) {
             return (
                 <div>
-                <div style={boxStyle}></div>
-                <div>
                     {listColors.map((item, i) =>
                         // <li key={i}>{item}</li>
                         <div key={i} style={{
@@ -48,7 +46,6 @@ const BoxForm = (props) => {
                         }}>{item}</div>
 
                         )}
-                </div>
                 </div>
             );
         } else {
