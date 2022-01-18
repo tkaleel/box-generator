@@ -4,18 +4,19 @@ import React, {useState} from 'react';
 
 function App() {
 
-    const [currentColor, setCurrentColor] = useState("red");
-    const [colorArr, setColorArr] = useState([]);
+    const [newColor, setNewColor] = useState("red");
+    const [colors, setColors] = useState([]);
 
     const gotColor = (newColor) => {
-      setCurrentColor(newColor);
-      colorArr.push(newColor);
+      setNewColor(newColor);
+      setColors([...colors, newColor])
+      colors.push(newColor);
     }
     
 
   return (
     <div className="App">
-      <BoxForm onNewColor={ gotColor } color={currentColor} colors={colorArr}/>
+      <BoxForm onNewColor={ gotColor } color={newColor} colors={colors}/>
     </div>
   );
 }

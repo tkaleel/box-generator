@@ -37,8 +37,8 @@ const BoxForm = (props) => {
                 <div style={boxStyle}></div>
                 <div>
                     {listColors.map((item, i) =>
-                        // <li key={i}>{item}</li>
-                        <div key={i} style={boxStyle}></div>
+                        <li key={i}>{item}</li>
+                        // <div key={i} style={boxStyle}></div>
 
                         )}
                 </div>
