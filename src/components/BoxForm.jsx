@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 const BoxForm = (props) => {
     const [color, setColor] = useState("");
     const [hasBeenSubmitted, setHasBeenSubmitted] = useState(false);
+    const listColors = props.colors;
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -10,7 +11,7 @@ const BoxForm = (props) => {
         console.log("Your chosen color: ", newBoxColor.color);
         props.onNewColor(color);
         setColor("");
-        
+
         console.log(props.colors)
         setHasBeenSubmitted(true);
 
@@ -18,7 +19,7 @@ const BoxForm = (props) => {
 
     const handleColor = (e) => {
         setColor(e.target.value);
-        
+
     }
 
     const boxStyle = {
@@ -32,8 +33,17 @@ const BoxForm = (props) => {
     const boxGenerator = () => {
         if (hasBeenSubmitted) {
             return (
+                <div>
                 <div style={boxStyle}></div>
-            )
+                <div>
+                    {listColors.map((item, i) =>
+                        // <li key={i}>{item}</li>
+                        <div key={i} style={boxStyle}></div>
+
+                        )}
+                </div>
+                </div>
+            );
         } else {
             return "Please select a color.";
         }

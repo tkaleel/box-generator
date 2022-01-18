@@ -9,7 +9,7 @@ function App() {
 
     const gotColor = (newColor) => {
       setCurrentColor(newColor);
-      setColorArr(colorArr.push(newColor));
+      colorArr.push(newColor);
     }
     
 
