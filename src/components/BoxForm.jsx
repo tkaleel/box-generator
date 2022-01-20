@@ -20,7 +20,6 @@ const BoxForm = (props) => {
 
     const handleColor = (e) => {
         setColor(e.target.value);
-
     }
 
     const boxStyle = {
@@ -30,7 +29,7 @@ const BoxForm = (props) => {
         height: '150px',
         border: 'none'
     };
-
+//below function could be its own component
     const boxGenerator = () => {
         if (hasBeenSubmitted) {
             return (
@@ -42,7 +41,8 @@ const BoxForm = (props) => {
                             background: item,
                             width: '150px',
                             height: '150px',
-                            border: 'none'
+                            border: 'none',
+                            display: "inline-block"
                         }}>{item}</div>
 
                         )}
@@ -63,6 +63,7 @@ const BoxForm = (props) => {
                     <input type="submit" value="Add Box" />
                 </div>
             </form>
+            <hr />
             <h2>Boxes</h2>
             <p>{color}</p>
             <div>
